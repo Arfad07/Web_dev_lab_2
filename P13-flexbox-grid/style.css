@@ -1,6 +1,5 @@
-```css
-/* P13 - Flexbox and Grid Combined */
 
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
@@ -9,108 +8,109 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1f5f9;
-    color: #1e293b;
+    background-color: #f4f4f4;
+    color: #333;
     line-height: 1.6;
 }
 
-/* Flexbox Header */
+/* Header - Flexbox */
 .header {
-    background-color: #1e3a8a;
+    background-color: #222;
     color: white;
     padding: 20px 40px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
-.header nav {
+nav {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 25px;
 }
 
-.header nav a {
+nav a {
     color: white;
     text-decoration: none;
 }
 
+nav a:hover {
+    color: #00bcd4;
+}
+
 /* Hero Section */
 .hero {
-    background-color: #dbeafe;
+    background-color: #00bcd4;
+    color: white;
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
 }
 
-.hero h2 {
-    margin-bottom: 10px;
-}
-
-/* Flexbox Content Layout */
+/* Content - Flexbox */
 .content {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
     display: flex;
     gap: 20px;
-    align-items: stretch;
+    padding: 30px;
 }
 
-.main-content,
-.sidebar {
+.main-content {
+    flex: 3;
     background-color: white;
     padding: 25px;
     border-radius: 8px;
 }
 
-.main-content {
-    flex: 2;
-}
-
 .sidebar {
     flex: 1;
+    background-color: #ddd;
+    padding: 25px;
+    border-radius: 8px;
 }
 
-/* CSS Grid Projects */
+/* Projects - CSS Grid */
 .projects {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
+    padding: 30px;
     text-align: center;
-}
-
-.projects h2 {
-    margin-bottom: 20px;
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-top: 20px;
 }
 
 .project-card {
-    background-color: white;
-    padding: 30px 15px;
+    background-color: #222;
+    color: white;
+    padding: 35px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+    background-color: #00bcd4;
+    color: white;
 }
 
 /* Footer */
-footer {
-    background-color: #1e3a8a;
+.footer {
+    background-color: #222;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
 }
 
-/* Responsive Layout */
-@media (max-width: 700px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+
     .header {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .content {
@@ -118,7 +118,12 @@ footer {
     }
 
     .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
         grid-template-columns: 1fr;
     }
 }
-```
